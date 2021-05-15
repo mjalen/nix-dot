@@ -1,6 +1,0 @@
-2021/05/13-20:13:16.661 3 Reusing MANIFEST /home/jalen/.config/chromium/Default/Local Storage/leveldb/MANIFEST-000001
-2021/05/13-20:13:16.662 3 Recovering log #12
-2021/05/13-20:13:16.662 3 Reusing old log /home/jalen/.config/chromium/Default/Local Storage/leveldb/000012.log 
-2021/05/13-21:22:32.138 13 Level-0 table #16: started
-2021/05/13-21:22:32.152 13 Level-0 table #16: 92636 bytes OK
-2021/05/13-21:22:32.158 13 Delete type=0 #12

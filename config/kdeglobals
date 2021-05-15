@@ -1,5 +1,0 @@
-[$Version]
-update_info=filepicker.upd:filepicker-remove-old-previews-entry,kwin.upd:animation-speed,fonts_global.upd:Fonts_Global,fonts_global_toolbar.upd:Fonts_Global_Toolbar,icons_remove_effects.upd:IconsRemoveEffects
-
-[General]
-dbfile=/home/jalen/.mozilla/firefox/jalen/places.sqlite

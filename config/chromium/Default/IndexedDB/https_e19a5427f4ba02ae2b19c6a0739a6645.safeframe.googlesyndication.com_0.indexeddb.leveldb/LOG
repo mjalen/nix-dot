@@ -1,6 +1,0 @@
-2021/05/13-07:18:03.705 4b31 Creating DB /home/jalen/.config/chromium/Default/IndexedDB/https_e19a5427f4ba02ae2b19c6a0739a6645.safeframe.googlesyndication.com_0.indexeddb.leveldb since it was missing.
-2021/05/13-07:18:03.723 4b31 Reusing MANIFEST /home/jalen/.config/chromium/Default/IndexedDB/https_e19a5427f4ba02ae2b19c6a0739a6645.safeframe.googlesyndication.com_0.indexeddb.leveldb/MANIFEST-000001
-2021/05/13-07:18:07.101 4eed Level-0 table #5: started
-2021/05/13-07:18:07.106 4eed Level-0 table #5: 439 bytes OK
-2021/05/13-07:18:07.111 4eed Delete type=0 #3
-2021/05/13-07:18:07.111 4eed Manual compaction at level-0 from (begin) .. (end); will stop at (end)

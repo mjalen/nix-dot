@@ -1,8 +1,0 @@
-2021/05/13-20:13:16.925 78e7 Reusing MANIFEST /home/jalen/.config/chromium/Default/IndexedDB/chrome-extension_cjpalhdlnbpafiamejdnhcphjbkeiagm_0.indexeddb.leveldb/MANIFEST-000001
-2021/05/13-20:13:16.925 78e7 Recovering log #16
-2021/05/13-20:13:16.925 78e7 Reusing old log /home/jalen/.config/chromium/Default/IndexedDB/chrome-extension_cjpalhdlnbpafiamejdnhcphjbkeiagm_0.indexeddb.leveldb/000016.log 
-2021/05/13-20:13:18.933 78f8 Level-0 table #20: started
-2021/05/13-20:13:18.933 78f8 Level-0 table #20: 0 bytes OK
-2021/05/13-20:13:18.946 78f8 Delete type=0 #16
-2021/05/13-20:13:18.946 78f8 Manual compaction at level-0 from (begin) .. (end); will stop at (end)
-2021/05/13-20:13:18.946 78f8 Manual compaction at level-1 from (begin) .. (end); will stop at (end)

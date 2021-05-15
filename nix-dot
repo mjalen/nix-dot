@@ -6,7 +6,8 @@ then
     pushd ~/doc/nix-dot/
     cp -r ~/.config/nixpkgs .
     cp -r /etc/nixos/ .
-    cp -r ~/.config/* ./config/
+    cp -r ~/.config/herbstluftwm ./config/
+    cp -r ~/.config/polybar ./config/
     cp -r ~/.xinitrc ./dot/xinitrc
     cp -r ~/.emacs.d/init.el ./dot/emacs.d/
     cp -r ~/.emacs.d/emacs.org ./dot/emacs.d/
@@ -27,7 +28,8 @@ then
     echo "Downloading and copying nix/dotfiles to respective locations..."
 
     cp -r nixpkgs ~/.config/nixpkgs
-    cp -r ~/.config/* ./config/
+    cp -r ./config/ ~/.config/herbstluftwm
+    cp -r ./config/ ~/.config/polybar 
     cp -r ./dot/xinitrc ~/.xinitrc
     mkdir ~/.emacs.d/
     cp -r ./dot/emacs.d/init.el ~/.emacs.d/ 
