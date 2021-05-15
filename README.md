@@ -36,6 +36,8 @@ Run:
 $ nix-dot up 
 ```
 
+-or-
+
 ```
 $ nix-dot -u
 ```
