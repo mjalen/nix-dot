@@ -30,8 +30,8 @@ then
     echo "" 
     git pull
     cp -r nixpkgs ~/.config/nixpkgs
-    cp -r ./config/ ~/.config/herbstluftwm
-    cp -r ./config/ ~/.config/polybar 
+    cp -r ./config/herbstluftwm ~/.config/herbstluftwm
+    cp -r ./config/polybar ~/.config/polybar 
     cp -r ./dot/xinitrc ~/.xinitrc
     mkdir ~/.emacs.d/
     cp -r ./dot/emacs.d/init.el ~/.emacs.d/ 
