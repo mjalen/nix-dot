@@ -11,17 +11,16 @@ Keep in mind, this setup keeps the following in mind:
 
 To install this setup, run:
 
-'''
+```
 $ ./nix-dot down
 # nixos-rebuild switch
 $ home-manager switch
-
-'''
+```
 
 # Updating and Commiting (for myself)
 
 Run:
 
-'''
+```
 $ nix-dot up 
-'''
+```
