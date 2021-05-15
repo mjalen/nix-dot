@@ -18,8 +18,14 @@ To install this setup, run:
 
 ```
 $ ./nix-dot down
-# nixos-rebuild switch
-$ home-manager switch
+$ ./nix-dot build
+```
+
+Or you can use the new flags:
+
+```
+$ ./nix-dot -d
+$ ./nix-dot -b
 ```
 
 # Updating and Commiting (for myself)
@@ -28,6 +34,10 @@ Run:
 
 ```
 $ nix-dot up 
+```
+
+```
+$ nix-dot -u
 ```
 
 # License/Permissions
