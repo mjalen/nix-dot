@@ -20,7 +20,7 @@ then
     popd
 
     
-
+    echo ""
     echo "Finished uploading to Github!"
 fi
 
