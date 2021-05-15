@@ -36,7 +36,7 @@ then
     mkdir ~/.emacs.d/
     cp -r ./dot/emacs.d/init.el ~/.emacs.d/ 
     cp -r ./dot/emacs.d/emacs.org ~/.emacs.d/
-    cp -r ./dot/xmodmap/ ~/.xmodmap
+    cp -r ./dot/xmodmap ~/.xmodmap
     su -c "cp -r ./nixos /etc/"
 
     echo ""
