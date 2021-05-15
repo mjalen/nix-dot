@@ -7,12 +7,15 @@
 #   'down' -> Downloads and installs my dotfiles as seen on Github.
 #   'build' -> A wrapper utility for building both my global and local user
 #              configurations using nixos-rebuild and home-manager.
+#   'edit' -> Given more arguments, allows for easy edit of configurations.
 #
 
 # Firstly, parse argument given
 BUILD=0
 UPLOAD=0
 DOWNLOAD=0
+EDIT=0
+FILE=""
 
 for arg in "$1"
 do
@@ -25,6 +28,10 @@ do
             ;;
         -d|down)
             DOWNLOAD=1
+            ;;
+        -e|edit)
+            EDIT=1
+            FILE=$2
             ;;
     esac
 done
@@ -39,6 +46,16 @@ if [ $BUILD = 1 ]; then
 
     echo ""
     echo "Finished building nixOS configurations."
+
+elif [ $EDIT = 1 ]; then
+
+    if [ $FILE = "home" ]; then
+        sh -c "vim ~/.config/nixpkgs/home.nix"
+    elif [ $FILE = "conf" ]; then
+        su -c "vim /etc/nixos/configuration.nix"
+    else
+        sh -c "vim ~/.config/nixpkgs/modules/$FILE.nix"
+    fi
 
 elif [ $UPLOAD = 1 ]; then
 
@@ -58,7 +75,6 @@ elif [ $UPLOAD = 1 ]; then
     git commit -m "Used nix-dot script to update repo."
     git push
     popd
-
     
     echo ""
     echo "Finished uploading to Github!"
