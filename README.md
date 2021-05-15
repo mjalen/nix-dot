@@ -33,14 +33,16 @@ $ ./nix-dot -b
 Run:
 
 ```
-$ nix-dot up 
+$ ./nix-dot up 
 ```
 
--or-
+Or:
 
 ```
-$ nix-dot -u
+$ ./nix-dot -u
 ```
+
+The home configuration also provides an alias for `~/doc/nix-dot/nix-dot` as `nd`. So for uploading, the command would become `nd up` or `nd -u`.
 
 # License/Permissions
 
