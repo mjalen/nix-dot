@@ -3,6 +3,7 @@
 if [ $1 = "up" ] 
 then
     echo "Uploading nix/dotfiles to Github..."
+    echo ""
     pushd ~/doc/nix-dot/
     cp -r ~/.config/nixpkgs .
     cp -r /etc/nixos/ .
@@ -26,7 +27,8 @@ fi
 if [ $1 = "down" ]
 then
     echo "Downloading and copying nix/dotfiles to respective locations..."
-
+    echo "" 
+    git pull
     cp -r nixpkgs ~/.config/nixpkgs
     cp -r ./config/ ~/.config/herbstluftwm
     cp -r ./config/ ~/.config/polybar 
@@ -37,6 +39,7 @@ then
     cp -r ./dot/xmodmap/ ~/.xmodmap
     su -c "cp -r ./nixos /etc/"
 
+    echo ""
     echo "All finished!"
     echo ""
     echo "Remember to run:"
