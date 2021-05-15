@@ -1,5 +1,7 @@
 # NixOS Dotfiles *INCOMPLETE*
 
+![Current Rice](./pic/mountain.png)
+
 My *hopefully* up to date dotfiles. They may be up-to-date, or they may not be. Hopefully I will actually use the rough script I wrote...
 
 Keep in mind, this setup keeps the following in mind:
