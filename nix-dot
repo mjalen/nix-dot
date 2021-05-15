@@ -1,0 +1,40 @@
+#!/bin/sh
+
+if [ $1 = "up" ] 
+then
+    echo "Uploading nix/dotfiles to Github..."
+    pushd ~/doc/nix-dot/
+    cp -r ~/.config/nixpkgs .
+    cp -r /etc/nixos/ .
+    cp -r ~/.config/* ./config/
+    cp -r ~/.xinitrc ./dot/xinitrc
+    cp -r ~/.emacs.d/ ./dot/emacs.d/
+    cp -r ~/.xmodmap/ ./dot/xmodmap
+    
+    git add .
+    git commit -m "Used nix-dot script to update repo."
+    git push
+    popd
+
+    
+
+    echo "Finished uploading to Github!"
+fi
+
+if [ $1 = "down" ]
+then
+    echo "Downloading and copying nix/dotfiles to respective locations..."
+
+    cp -r nixpkgs ~/.config/nixpkgs
+    cp -r ~/.config/* ./config/
+    cp -r ./dot/xinitrc ~/.xinitrc
+    cp -r ./dot/emacs.d/ ~/.emacs.d/ 
+    cp -r ./dot/xmodmap/ ~/.xmodmap
+    su -c "cp -r ./nixos /etc/"
+
+    echo "All finished!"
+    echo ""
+    echo "Remember to run:"
+    echo "# nixos-rebuild switch"
+    echo "$ home-manager switch"
+fi 

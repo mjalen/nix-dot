@@ -1,0 +1,6 @@
+2021/05/13-20:04:10.642 6366 Creating DB /home/jalen/.config/chromium/Default/IndexedDB/https_www.alphr.com_0.indexeddb.leveldb since it was missing.
+2021/05/13-20:04:10.657 6366 Reusing MANIFEST /home/jalen/.config/chromium/Default/IndexedDB/https_www.alphr.com_0.indexeddb.leveldb/MANIFEST-000001
+2021/05/13-20:04:43.414 64d8 Level-0 table #5: started
+2021/05/13-20:04:43.419 64d8 Level-0 table #5: 1350 bytes OK
+2021/05/13-20:04:43.424 64d8 Delete type=0 #3
+2021/05/13-20:04:43.424 64d8 Manual compaction at level-0 from (begin) .. (end); will stop at (end)

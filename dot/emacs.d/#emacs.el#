@@ -1,0 +1,203 @@
+(setq inhibit-startup-screen t)
+(menu-bar-mode 0)
+(tool-bar-mode 0)
+(toggle-scroll-bar 0)
+
+(setq create-lockfiles nil)
+(setq delete-by-moving-to-trash t)
+
+(require 'dashboard)
+(dashboard-setup-startup-hook)
+(setq dashboard-startup-banner "/home/jalen/pic/komi_food_dashboard.png")
+(setq dashboard-set-init-info nil)
+(setq dashboard-banner-logo-title "Welcome home!")
+(setq dashboard-week-agenda nil)
+
+(use-package ivy
+  :diminish
+  :bind (("C-s" . swiper)
+         :map ivy-minibuffer-map
+         ("TAB" . ivy-alt-done)
+         ("C-l" . ivy-alt-done)
+         ("C-j" . ivy-next-line)
+         ("C-k" . ivy-previous-line)
+         :map ivy-switch-buffer-map
+         ("C-k" . ivy-previous-line)
+         ("C-l" . ivy-done)
+         ("C-d" . ivy-switch-buffer-kill)
+         :map ivy-reverse-i-search-map
+         ("C-k" . ivy-previous-line)
+         ("C-d" . ivy-reverse-i-search-kill))
+  :init
+  (ivy-mode 1)
+  :config
+  (setq ivy-use-virtual-buffers t)
+  (setq ivy-wrap t)
+  (setq ivy-count-format "(%d/%d) ")
+  (setq enable-recursive-minibuffers t))
+
+(use-package hydra
+  :defer 1)
+
+(use-package ivy-hydra
+  :defer t
+  :after hydra)
+
+(use-package counsel
+  :bind (("M-x" . counsel-M-x)
+         ("C-x b" . counsel-ibuffer)
+         ("C-x C-f" . counsel-find-file)
+         ("C-M-l" . counsel-imenu)
+         :map minibuffer-local-map
+         ("C-r" . 'counsel-minibuffer-history))
+  :custom
+  (counsel-linux-app-format-function #'counsel-linux-app-format-function-name-only)
+  :config
+  (setq ivy-initial-inputs-alist nil))
+
+(use-package org
+  :hook (org-mode . pandoc-mode)
+  :config
+  (setq org-ellipsis " ▾"))
+
+(use-package org-superstar
+   :after org
+   :hook (org-mode . org-superstar-mode)
+   :custom
+   (org-superstar-remove-leading-stars t)
+   (org-superstar-headline-bullets-list '("◉" "○" "●" "○" "●" "○" "●")))
+
+(defun jm/org-mode-visual-fill ()
+  (setq visual-fill-column-width 100
+        visual-fill-column-center-text t)
+  (visual-fill-column-mode 1))
+
+(use-package visual-fill-column
+  :hook (org-mode . jm/org-mode-visual-fill))
+
+(load-theme 'xresources t)
+;(use-package ewal
+;   :init (setq ewal-use-built-in-always-p nil 
+;               ewal-use-built-in-on-failure-p t
+;	       ewal-evil-cursors-obey-evil-p t
+;	       ewal-built-in-palette "sexy-material")
+;   (ewal-load-colors))
+;(set-foreground-color "#f1f1f1")
+;(set-background-color "#1c1e27")
+
+;(setq mode-line-format nil)
+;(setq-default mode-line-format nil)
+
+(setq exwm--mode-line-format
+  (list
+   "%b"
+   (getenv "USER")))
+
+(display-battery-mode 1)
+(setq battery-mode-line-format "%b%B")
+(setq display-time-day-and-date t)
+(setq display-time-format "%b %d %I:%M %p")
+(display-time-mode 1)
+
+;(use-package mini-modeline
+;   :config
+;    (mini-modeline-mode t))
+
+(use-package doom-modeline
+  :init
+  (doom-modeline-mode)
+  :custom
+  (doom-modeline-height 15))
+(display-battery-mode 1)
+(display-time-mode 1)
+
+(use-package which-key
+  :init (which-key-mode)
+  :diminish which-key-mode
+  :config (setq which-key-idle-delay 0.2))
+
+(use-package general
+  :config
+  (general-evil-setup nil))
+
+(defun vol-up ()
+  (interactive)
+  (shell-command "amixer set Master 5%+"))
+(defun vol-down ()
+  (interactive)
+  (shell-command "amixer set Master 5%-"))
+(defun vol-mute ()
+  (interactive)
+  (shell-command "amixer -q sset Master toggle"))
+(defun rbright ()
+  (interactive)
+  (shell-command "xbacklight -inc 5"))
+(defun lbright ()
+  (interactive)
+  (shell-command "xbacklight -dec 5"))
+
+(defun load-init ()
+  (interactive)
+  (load-file "~/.emacs.d/init.el"))
+  
+(defun pdf-latex ()
+  (interactive)
+  (shell-command "pdflatex ./*.tex"))
+
+;(load "/home/jalen/.emacs.d/keys.el")
+ (general-define-key
+   "M-<tab>" 'other-window
+ 
+
+(general-def org-mode-map
+  "C-SPC C-e" 'load-init
+  "C-<tab>" 'counsel-ibuffer)
+
+(use-package use-package-chords
+  :disabled
+  :config (key-chord-mode 1))
+
+;(auto-indent-global-mode)
+
+(use-package evil
+  :init
+  (setq evil-want-integration t)
+  (setq evil-want-keybinding nil)
+  (setq evil-want-C-u-scroll t)
+  (setq evil-want-C-i-jump nil)
+  :config
+  (evil-mode 1)
+  (define-key evil-insert-state-map (kbd "C-g") 'evil-normal-state)
+  (define-key evil-insert-state-map (kbd "C-h") 'evil-delete-backward-char-and-join)
+  (evil-global-set-key 'motion "j" 'evil-next-visual-line)
+  (evil-global-set-key 'motion "k" 'evil-previous-visual-line))
+
+;(setq internal-border-width 30)
+(use-package default-text-scale
+  :defer 1
+  :config
+  (default-text-scale-mode))
+
+;(add-hook 'find-file-hook (lambda () (linum-mode t)))
+(setq column-number-mode t)
+;(setq auto-fill-mode t)
+(global-visual-line-mode)
+(global-visual-fill-column-mode)
+(set-display-table-slot standard-display-table 'wrap ?\ )
+;(setq linum-format "   ")
+
+(set-frame-parameter (selected-frame) 'alpha '(90 . 90))
+(add-to-list 'default-frame-alist '(alpha . (90 . 90)))
+;(set-frame-parameter (selected-frame) 'fullscreen 'maximized)
+;(add-to-list 'default-frame-alist '(fullscreen . maximized))
+
+(load "/home/jalen/.emacs.d/methods.el")
+
+;(pdf-loader-install)
+
+;(require 'cl)
+;(autoload 'arduino-mode "arduino-mode" "Arduino editing mode." t)
+;(add-to-list 'auto-mode-alist '("\.ino$" . arduino-mode))
+
+(add-hook 'yas-minor-mode-hook (lambda ()
+                                  (yas-activate-extra-mode 'fundamental-mode)))

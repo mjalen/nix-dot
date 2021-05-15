@@ -1,0 +1,1 @@
+/home/jalen/.emacs.d/straight/repos/smarttabs/smart-tabs-mode.el

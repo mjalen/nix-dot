@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: Export  
+# key: exp 
+# --
+
+#+begin_export $1
+$0
+#+end_export

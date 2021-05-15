@@ -1,0 +1,15 @@
+# Welcome to my xinit!
+picom & 
+xsetroot -cursor_name left_ptr &
+#xrdb .Xresources
+xmodmap .xmodmap
+xcape -e 'Control_L=Escape'
+#wmname compiz
+
+# Enable screen locking
+#xss-lock -- slock &
+
+# Execute environment
+pape ~/pic/mount.png &
+polybar -r mybar &
+exec herbstluftwm

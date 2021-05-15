@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: Add a new latex header to org 
+# key: head 
+# --
+#+LATEX_HEADER: 

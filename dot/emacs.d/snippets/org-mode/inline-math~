@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: Inline math for org mode (using latex) 
+# key: mk 
+# --
+\(${1:inline math}\)$0

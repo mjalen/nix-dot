@@ -1,0 +1,15 @@
+2021/05/13-20:12:08.847 7403 Reusing MANIFEST /home/jalen/.config/chromium/Default/IndexedDB/https_www.twitch.tv_0.indexeddb.leveldb/MANIFEST-000001
+2021/05/13-20:12:08.847 7403 Recovering log #15
+2021/05/13-20:12:08.847 7403 Reusing old log /home/jalen/.config/chromium/Default/IndexedDB/https_www.twitch.tv_0.indexeddb.leveldb/000015.log 
+2021/05/13-20:12:40.868 7420 Level-0 table #20: started
+2021/05/13-20:12:40.880 7420 Level-0 table #20: 601 bytes OK
+2021/05/13-20:12:40.885 7420 Delete type=0 #15
+2021/05/13-20:12:40.885 7420 Manual compaction at level-0 from (begin) .. (end); will stop at (end)
+2021/05/13-20:12:40.886 7420 Manual compaction at level-1 from (begin) .. (end); will stop at '\x00\x01\x01\x02\x01\x0f\x00c\x00u\x00r\x00r\x00e\x00n\x00t\x00_\x00u\x00s\x00e\x00r\x00_\x00i\x00d' @ 85 : 1
+2021/05/13-20:12:40.886 7420 Compacting 1@1 + 1@2 files
+2021/05/13-20:12:40.890 7420 Generated table #21@1: 19 keys, 552 bytes
+2021/05/13-20:12:40.890 7420 Compacted 1@1 + 1@2 files => 552 bytes
+2021/05/13-20:12:40.895 7420 compacted to: files[ 0 0 1 0 0 0 0 ]
+2021/05/13-20:12:40.895 7420 Delete type=2 #17
+2021/05/13-20:12:40.895 7420 Delete type=2 #20
+2021/05/13-20:12:40.895 7420 Manual compaction at level-1 from '\x00\x01\x01\x02\x01\x0f\x00c\x00u\x00r\x00r\x00e\x00n\x00t\x00_\x00u\x00s\x00e\x00r\x00_\x00i\x00d' @ 85 : 1 .. (end); will stop at (end)
