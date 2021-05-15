@@ -1,0 +1,104 @@
+[bar/mybar]
+override-redirect = false
+monitor-exact = true
+offset-x = 0
+offset-y = 0
+#line-size = 13
+font-0 = "JetBrains Mono:pixelsize=9;0"
+font-1 = "Material Icons:pixelsize=9;0"
+font-2 = FontAwesome:fontformat=truetype:size=9:antialias=true;0
+label-active-font = 0
+module-margin = 1
+padding-left = 1
+padding-right = 1
+width = 100%
+height = 20
+seperator = |
+modules-left = title ewmh
+modules-center = date  
+modules-right = alsa <seperator> battery
+tray-position = right
+tray-detached = false
+tray-padding = 2
+tray-maxsize = 15
+background = ${colors.background-tp}
+tray-background = ${colors.background}
+foreground = ${colors.foreground}
+
+[colors]
+background = ${xrdb:color0:#222}
+background-tp = ${xrdb:color0:#222}
+foreground = ${xrdb:color7:#222}
+foreground-alt = ${xrdb:color7:#222}
+primary = ${xrdb:color1:#222}
+secondary = ${xrdb:color2:#222}
+alternate = ${xrdb:color4:#222}
+alert = ${xrdb:color3:#222}
+
+[module/date]
+type = internal/date
+interval = 1.0
+time = %A, %d %b %Y, %H:%M:%S
+time-alt = %Y-%m-%d
+format = <label>
+format-background = ${colors.background}
+format-foreground = ${colors.alternate}
+label = %time%
+
+[module/ewmh]
+type = internal/xworkspaces
+label-active = %icon% [%name%]
+label-active-foreground = ${colors.primary}
+label-inactive-foreground = ${colors.primary}
+
+[module/title]
+type = internal/xwindow
+format = <label>
+format-foreground = ${colors.background}
+format-background = ${colors.primary}
+format-padding = 4
+label = %title%
+label-maxlen = 50
+
+[module/alsa]
+type = internal/alsa
+master-mixer = Master
+interval = 5
+format-volume = <ramp-volume> <label-volume>
+ramp-volume-0 = 🔈
+ramp-volume-1 = 🔉
+ramp-volume-2 = 🔊
+
+[module/spotify]
+type = custom/script
+interval = 1
+format-prefix = ""
+format = <label>
+exec = python ${HOME}/.config/polybar/scripts/spotify_status.py -f '{artist} - {song}'
+format-foreground = ${colors.alternate}
+
+
+[module/battery]
+type = internal/battery
+full-at = 99
+battery = BAT0
+adapter = ADP1
+poll-interval = 5
+time-format = %H:%M
+
+format-charging = <ramp-capacity> <label-charging>
+label-charging = %percentage%% (%time%)
+
+format-discharging = <ramp-capacity> <label-discharging>
+label-discharging = %percentage%% (%time%)
+
+ramp-capacity-font = 2
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
+ramp-capacity-5 = 
+ramp-capacity-6 = 
+ramp-capacity-7 = 
+ramp-capacity-8 = 

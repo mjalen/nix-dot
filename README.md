@@ -6,6 +6,7 @@ Keep in mind, this setup keeps the following in mind:
 
 - The laptop of choice is a Thinkpad P51 using hybrid graphics (Nvidia PRIME).
 - Willingness to use the deprecated bumblebee over offloading due to Kaby Lake processor.
+- This repository is located at: `~/doc/nix-dot`.
 
 # Installing
 

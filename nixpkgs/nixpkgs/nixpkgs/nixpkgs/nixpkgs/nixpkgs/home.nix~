@@ -1,0 +1,83 @@
+{ config, pkgs, ... }:
+
+let
+  home-dir = "/home/jalen";
+
+in
+{
+  imports = [
+    ./modules/cmd.nix
+  ];
+
+  nixpkgs.config.packageOverrides = pkgs: {
+    nur = import (builtins.fetchTarball "https://github.com/nix-community/NUR/archive/master.tar.gz") {
+      inherit pkgs;
+    };
+  };
+ 
+  home.packages = with pkgs; [
+    git
+    dmenu
+    rofi
+    kitty
+    pywal
+    feh
+    neofetch pfetch
+    xmobar
+    jetbrains-mono
+    xss-lock slock
+    ];
+
+  programs = {
+    emacs = {
+      enable = true;
+      extraPackages = epkgs: [
+        epkgs.nix-mode
+      ];
+    };
+
+    bash = {
+      enable = true;
+      shellAliases = {
+        hm = "home-manager switch";
+        nr = "sudo nixos-rebuild switch";
+        v = "vim ";
+        ls = "ls --color=auto";
+        cp = "cp -i";
+        mv = "mv -i";
+      };
+      historyIgnore = [ "ls" "cd" "exit" ];
+    };
+
+    kitty = {
+      enable = true;
+      extraConfig = ''
+        include ~/.cache/wal/colors-kitty.conf
+        font-family JetBrains Mono
+        bold_font auto
+        italic_font auto 
+        bold_italic_font auto
+        font_size 9.0
+        disable_ligatures never
+        background_opacity 0.9
+        enable_audio_bell no
+        window_padding_width 8
+      '';
+    };
+
+    firefox = {
+      enable = true;
+#      extensions = with pkgs.nur.repos.rycee.firefox-addons; [
+ #       ublock-origin
+  #      dark-reader
+   #     old-reddit
+    #  ];
+    };
+  };
+
+
+  home.username = "jalen";
+  home.homeDirectory = home-dir;
+  home.stateVersion = "20.09";
+
+}
