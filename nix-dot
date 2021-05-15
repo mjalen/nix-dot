@@ -1,7 +1,47 @@
 #!/bin/sh
+#
+# A shell script/wrapper utility for backing up and using nixOS on my personal laptop.
+#
+# Options:
+#   'up' -> Copies and uploads my up-to-date dotfiles to Github.
+#   'down' -> Downloads and installs my dotfiles as seen on Github.
+#   'build' -> A wrapper utility for building both my global and local user
+#              configurations using nixos-rebuild and home-manager.
+#
 
-if [ $1 = "up" ] 
-then
+# Firstly, parse argument given
+BUILD=0
+UPLOAD=0
+DOWNLOAD=0
+
+for arg in "$1"
+do
+    case $arg in
+        -b|build)
+            BUILD=1
+            ;;
+        -u|up)
+            UPLOAD=1
+            ;;
+        -d|down)
+            DOWNLOAD=1
+            ;;
+    esac
+done
+
+if [ $BUILD = 1 ]; then
+
+    echo "Building nixOS configurations... "
+    echo ""
+
+    su -c "nixos-rebuild switch"
+    home-manager switch
+
+    echo ""
+    echo "Finished building nixOS configurations."
+
+elif [ $UPLOAD = 1 ]; then
+
     echo "Uploading nix/dotfiles to Github..."
     echo ""
     pushd ~/doc/nix-dot/
@@ -22,10 +62,9 @@ then
     
     echo ""
     echo "Finished uploading to Github!"
-fi
 
-if [ $1 = "down" ]
-then
+elif [ $DOWNLOAD = 1 ]; then
+
     echo "Downloading and copying nix/dotfiles to respective locations..."
     echo "" 
 
@@ -47,4 +86,10 @@ then
     echo "Remember to run:"
     echo "# nixos-rebuild switch"
     echo "$ home-manager switch"
+
+else
+    echo "Must give an argument such as: "
+    echo "  up (-u): Upload dotfiles to Github."
+    echo "  down (-d): Download dotfiles and distribute from Github."
+    echo "  build (-b): Build nixOS configurations using this wrapper."
 fi 

@@ -23,6 +23,7 @@ in
     python3
     steam
     polybar
+    elixir
     ];
 
   programs = {
@@ -76,7 +77,7 @@ in
 
     vim = {
       enable = true;
-      plugins = with pkgs.vimPlugins; [ vim-airline tabular nerdtree wal-vim vimtex ];
+      plugins = with pkgs.vimPlugins; [ vim-airline tabular nerdtree wal-vim vimtex vim-elixir];
       settings = { 
         ignorecase = true; 
       };
