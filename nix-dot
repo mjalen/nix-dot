@@ -28,6 +28,8 @@ if [ $1 = "down" ]
 then
     echo "Downloading and copying nix/dotfiles to respective locations..."
     echo "" 
+
+    pushd ~/doc/nix-dot/
     git pull
     cp -r nixpkgs ~/.config/nixpkgs
     cp -r ./config/herbstluftwm ~/.config/herbstluftwm
@@ -38,6 +40,7 @@ then
     cp -r ./dot/emacs.d/emacs.org ~/.emacs.d/
     cp -r ./dot/xmodmap ~/.xmodmap
     su -c "cp -r ./nixos /etc/"
+    popd
 
     echo ""
     echo "All finished!"
