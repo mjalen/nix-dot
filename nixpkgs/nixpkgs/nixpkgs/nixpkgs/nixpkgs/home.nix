@@ -48,7 +48,6 @@ in
         ls = "ls --color=auto";
         cp = "cp -i";
         mv = "mv -i";
-        nd = "~/doc/nix-dot/nix-dot ";
       };
       historyIgnore = [ "ls" "cd" "exit" ];
       bashrcExtra = "

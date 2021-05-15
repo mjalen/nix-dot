@@ -30,7 +30,6 @@ then
     echo "" 
 
     pushd ~/doc/nix-dot/
-    git pull
     cp -r nixpkgs ~/.config/nixpkgs
     cp -r ./config/herbstluftwm ~/.config/herbstluftwm
     cp -r ./config/polybar ~/.config/polybar 
