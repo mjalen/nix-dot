@@ -12,7 +12,7 @@ then
     cp -r ~/.xinitrc ./dot/xinitrc
     cp -r ~/.emacs.d/init.el ./dot/emacs.d/
     cp -r ~/.emacs.d/emacs.org ./dot/emacs.d/
-    cp -r ~/.xmodmap/ ./dot/xmodmap
+    cp -r ~/.xmodmap ./dot/xmodmap
     
     git add .
     git commit -m "Used nix-dot script to update repo."
