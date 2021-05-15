@@ -1,1 +1,0 @@
-/home/jalen/.emacs.d/straight/repos/emacs-mini-modeline/mini-modeline.el

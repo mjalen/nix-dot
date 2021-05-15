@@ -1,5 +1,0 @@
-# -*- mode: snippet -*-
-# name: Line Math 
-# key: dm 
-# --
-\[${1:Math}.\]

@@ -1,2 +1,0 @@
-;;; Generated package description from /home/jalen/.emacs.d/elpa/mini-modeline-20201221.1825/mini-modeline.el  -*- no-byte-compile: t -*-
-(define-package "mini-modeline" "20201221.1825" "Display modeline in minibuffer" '((emacs "25.1") (dash "2.12.0")) :commit "7dcd0ab81bb7c298377708061176f5c5a50f77db" :authors '(("Kien Nguyen" . "kien.n.quang@gmail.com")) :maintainer '("Kien Nguyen" . "kien.n.quang@gmail.com") :keywords '("convenience" "tools") :url "https://github.com/kiennq/emacs-mini-modeline")

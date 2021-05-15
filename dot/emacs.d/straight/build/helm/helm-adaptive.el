@@ -1,1 +1,0 @@
-/home/jalen/.emacs.d/straight/repos/helm/helm-adaptive.el

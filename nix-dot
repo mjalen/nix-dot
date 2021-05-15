@@ -8,7 +8,8 @@ then
     cp -r /etc/nixos/ .
     cp -r ~/.config/* ./config/
     cp -r ~/.xinitrc ./dot/xinitrc
-    cp -r ~/.emacs.d/ ./dot/emacs.d/
+    cp -r ~/.emacs.d/init.el ./dot/emacs.d/
+    cp -r ~/.emacs.d/emacs.org ./dot/emacs.d/
     cp -r ~/.xmodmap/ ./dot/xmodmap
     
     git add .
@@ -28,7 +29,9 @@ then
     cp -r nixpkgs ~/.config/nixpkgs
     cp -r ~/.config/* ./config/
     cp -r ./dot/xinitrc ~/.xinitrc
-    cp -r ./dot/emacs.d/ ~/.emacs.d/ 
+    mkdir ~/.emacs.d/
+    cp -r ./dot/emacs.d/init.el ~/.emacs.d/ 
+    cp -r ./dot/emacs.d/emacs.org ~/.emacs.d/
     cp -r ./dot/xmodmap/ ~/.xmodmap
     su -c "cp -r ./nixos /etc/"
 
