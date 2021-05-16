@@ -24,6 +24,7 @@ in
     spotify
     gimp
     virt-manager
+    texlive.combined.scheme-full
     ];
 
   programs = {
@@ -99,8 +100,6 @@ in
         set showcmd
         set hidden
         set wildmenu
-        set wildmode=list:longest
-        set ttyfast
         set backspace=indent,eol,start
         set relativenumber
         set undofile
