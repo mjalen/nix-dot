@@ -25,6 +25,11 @@ in
     gimp
     virt-manager
     texlive.combined.scheme-full
+    pcmanfm
+    python3
+    python3.pkgs.requests
+    pypy3
+    python38Packages.pam
     ];
 
   programs = {
@@ -37,7 +42,7 @@ in
 
     git = {
       enable = true;
-      userName = "jalenyum";
+      userName = "jalen-moore";
       userEmail = "ajalenboi@gmail.com";
     };
 
@@ -81,7 +86,7 @@ in
 
     vim = {
       enable = true;
-      plugins = with pkgs.vimPlugins; [ vim-airline tabular nerdtree wal-vim vimtex vim-elixir];
+      plugins = with pkgs.vimPlugins; [ vim-airline tabular nerdtree wal-vim vimtex vim-elixir ];
       settings = { 
         ignorecase = true; 
       };

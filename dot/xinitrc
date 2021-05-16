@@ -10,6 +10,6 @@ xcape -e 'Control_L=Escape'
 #xss-lock -- slock &
 
 # Execute environment
-pape ~/pic/mount.png &
+pape maso &
 polybar -r mybar &
 exec herbstluftwm

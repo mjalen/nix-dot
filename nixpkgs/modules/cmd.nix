@@ -38,10 +38,12 @@ let
   pape = pkgs.writeShellScriptBin "pape" ''
    wallpaper=$1
 
-   if [ $wallpaper = "s" ]; then 
+   if [ $wallpaper = "sucu" ]; then 
       wallpaper=~/pic/sucu.png
-   elif [ $wallpaper = "m" ]; then 
+   elif [ $wallpaper = "mount" ]; then 
       wallpaper=~/pic/mount.png
+   elif [ $wallpaper="maso" ]; then
+      wallpaper=~/pic/maso.png
    fi
 
    wal -i $wallpaper
