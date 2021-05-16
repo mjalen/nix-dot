@@ -16,14 +16,14 @@ in
     kitty
     pywal
     feh
-    xmobar
     jetbrains-mono
-    xss-lock slock
     xorg.xbacklight
-    python3
     steam
     polybar
-    elixir
+    discord
+    spotify
+    gimp
+    virt-manager
     ];
 
   programs = {
@@ -50,6 +50,9 @@ in
         cp = "cp -i";
         mv = "mv -i";
         nd = "~/doc/nix-dot/nix-dot ";
+        el = "elixir ";
+        ns = "nix-shell -p ";
+        nfet = "nix-shell ~/.config/nixpkgs/modules/rice.nix";
       };
       historyIgnore = [ "ls" "cd" "exit" ];
       bashrcExtra = "
@@ -71,7 +74,7 @@ in
         disable_ligatures never
         background_opacity 0.9
         enable_audio_bell no
-        window_padding_width 8
+        window_padding_width 15 
       '';
     };
 
