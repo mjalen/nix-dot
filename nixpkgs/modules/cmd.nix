@@ -50,11 +50,18 @@ let
    cp ~/.cache/wal/colors.hs ~/.xmonad/lib/Colors.hs
    '';   
 
+  # matlab - launch matlab through docker and output to xorg
+  matlab = pkgs.writeShellScriptBin "matlab" ''
+    xhost +
+    docker run -it --rm -e DISPLAY=$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix:ro --shm-size=512M mathworks/matlab:r2021a
+    '';
+
 in
 {
   home.packages = with pkgs; [
     xmod xcape xorg.xmodmap
     same-display right-display end-display
     pape
+    matlab
   ];
 }

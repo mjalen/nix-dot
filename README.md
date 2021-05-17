@@ -4,6 +4,8 @@
 
 My *hopefully* up to date dotfiles. They may be up-to-date, or they may not be. Hopefully I will actually use the rough script I wrote...
 
+I may or may not switch back to Arch, we shall see if I can figure out how to use some software I need such as Matlab. Docker maybe?
+
 Keep in mind, this setup keeps the following in mind:
 
 - The laptop of choice is a Thinkpad P51 using hybrid graphics (Nvidia PRIME).

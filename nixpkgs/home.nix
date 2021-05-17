@@ -21,15 +21,14 @@ in
     steam
     polybar
     discord
-    spotify
     gimp
     virt-manager
     texlive.combined.scheme-full
     pcmanfm
     python3
-    python3.pkgs.requests
-    pypy3
-    python38Packages.pam
+    zathura
+    spotify
+    xorg.xhost
     ];
 
   programs = {

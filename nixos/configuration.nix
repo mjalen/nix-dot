@@ -77,7 +77,7 @@
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.jalen = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "bumblebee" "libvirtd" ]; # Enable ‘sudo’ for the user.
+    extraGroups = [ "wheel" "bumblebee" "libvirtd" "docker" ]; # Enable ‘sudo’ for the user.
     hashedPassword = "$6$a21W5OZg.B1A$FbnwFuE4/qV1LeBSy0IeNoL1ETnPFAkvgYWyqamGvRigOfMNneXtrlFgOaZh/SzPqSFqvQ1E8t/joJbsJfrsK.";
   };
 
@@ -93,6 +93,9 @@
   virtualisation.virtualbox.host.enable = true;
   virtualisation.virtualbox.host.enableExtensionPack = true;
   users.extraGroups.vboxusers.members = [ "jalen" ];
+
+  # Docker
+  virtualisation.docker.enable = true;
 
   # libvirtd
   virtualisation.libvirtd.enable = true;
