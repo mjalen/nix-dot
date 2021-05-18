@@ -1,5 +1,7 @@
 # NixOS Dotfiles *INCOMPLETE*
 
+*NOTE: AS OF RIGHT NOW, THIS PROJECT IS DORMANT, AS I HAVE SWITCHED BACK TO ARCH (SADLY)*
+
 ![Current Rice](./pic/mountain.png)
 
 My *hopefully* up to date dotfiles. They may be up-to-date, or they may not be. Hopefully I will actually use the rough script I wrote...
